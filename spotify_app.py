@@ -31,49 +31,71 @@ import numpy as np
 import spotify_utils as su
 import matplotlib.pyplot as plt
 
-#page set up
+# page set up
 st.set_page_config(layout="wide")
-nf = ['danceability', 'energy', 'key', 'loudness', 'mode', 'speechiness', 'acousticness','instrumentalness', 'liveness', 'valence', 'tempo', 'duration_ms', 'time_signature', 'popularity'] 
+nf = [
+    "danceability",
+    "energy",
+    "key",
+    "loudness",
+    "mode",
+    "speechiness",
+    "acousticness",
+    "instrumentalness",
+    "liveness",
+    "valence",
+    "tempo",
+    "duration_ms",
+    "time_signature",
+    "popularity",
+]
 run_button_click = False
 
-#refresh visualizations
+# refresh visualizations
 def refresh_viz(df, selected):
-        plot = su.grapher_utils(features_df=df, selection=selected)
-        return plot
+    plot = su.grapher_utils(features_df=df, selection=selected)
+    return plot
 
 
 # title and input section
 st.title("Spotify Visualizer v0.1")
-st.write("Welcome to the Spotify Visualizer v0.1. This application is designed to visualize songs or playlists")
-st.write("Note: If the link given is a playlist and song is selected, the first song from the playlist will be analyzed")
+st.write(
+    "Welcome to the Spotify Visualizer v0.1. This application is designed to visualize songs or playlists"
+)
+st.write(
+    "Note: If the link given is a playlist and song is selected, the first song from the playlist will be analyzed"
+)
 input = st.text_input(label="Enter spotify url here")
-ckbox = st.selectbox(label="Select if you are viewing a song or a playlist: ",options=[" ","Song", "Playlist"])
+ckbox = st.selectbox(
+    label="Select if you are viewing a song or a playlist: ",
+    options=[" ", "Song", "Playlist"],
+)
 container = st.container()
-#st.multiselect(label="Select features to visualize", options=nf)
+# st.multiselect(label="Select features to visualize", options=nf)
 check_all = st.checkbox(label="Select all", value=False)
 if check_all:
-        multisel = container.multiselect("Select features to visualize", nf, nf) 
+    multisel = container.multiselect("Select features to visualize", nf, nf)
 else:
-        multisel = container.multiselect("Select features to visualize", nf)
+    multisel = container.multiselect("Select features to visualize", nf)
 run_button = st.button("Run")
 if run_button and ckbox == " ":
-        st.error("Please select song or playlist")
+    st.error("Please select song or playlist")
 elif run_button:
-        if ckbox == "Song":
-                uri = su.extract_uri(input, song=True)
-                features_df = su.extract_features(uri=uri, song=True)
-                st.success("Features extracted from track")
-                run_button_click = True
-        elif ckbox == "Playlist":
-                uri = su.extract_uri(input, song=False)
-                tracklist = su.extract_tracks_from_playlist(uri)
-                with st.spinner("Extracting features from playlist. May take a while depending on playlist size"):
-                        features_df = su.extract_features(tracklist=tracklist)
-                        #TODO: Informative output saying how many songs are left in the loop
-                st.success("All tracks were parsed")
-                run_button_click = True
+    if ckbox == "Song":
+        uri = su.extract_uri(input, song=True)
+        features_df = su.extract_features(uri=uri, song=True)
+        st.success("Features extracted from track")
+        run_button_click = True
+    elif ckbox == "Playlist":
+        uri = su.extract_uri(input, song=False)
+        tracklist = su.extract_tracks_from_playlist(uri)
+        with st.spinner(
+            "Extracting features from playlist. May take a while depending on playlist size"
+        ):
+            features_df = su.extract_features(tracklist=tracklist)
+            # TODO: Informative output saying how many songs are left in the loop
+        st.success("All tracks were parsed")
+        run_button_click = True
 if run_button_click == True:
-        st.dataframe(features_df)
-        st.pyplot(refresh_viz(features_df, selected=multisel))
-
-
+    st.dataframe(features_df)
+    st.pyplot(refresh_viz(features_df, selected=multisel))
