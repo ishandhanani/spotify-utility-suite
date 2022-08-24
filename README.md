@@ -1,8 +1,11 @@
-# Deep dive into the artists I listen to
+# Spotify Utility Suite
 
-This repository consists of 3 parts
-1. A data processing script that can be used to pull tracks from an playlist along with numeric features and a popularity score
-2. A notebook where I explore differences between my personal artist playlists and compare them to Spotify's artist playlists 
-3. (In-progress) A recommendation system tuned on a selection of lyrical and lofi-beat rap (a genre I enjoy)
+Welcome to the Spotify Utility Suite (SUS). This is a personal project that I've create to experiment with Spotify and interact with my music in a novel way. This project started as a simple data mining exercise and developed into a web application consisting of the following 
+
+1. A program that can be used to visualize statistics of certain songs or playlists 
+2. A clustering algorithm that can compare personal "artist" playlists and Spotify's "This is <Artist>" playlists. More on this later 
+3. (In-progress) A recommendation system tuned on the statistics I described in (1)
+
+Feel free to create PR's if you'd like to see any features or want to contribute!
 
 Enjoy!
