@@ -8,4 +8,9 @@ Welcome to the Spotify Utility Suite (SUS). This is a personal project that I've
 
 Feel free to create PR's if you'd like to see any features or want to contribute!
 
+Features I'll be working on next
+
+1. Recommendation system that uses the data from (1)
+2. Multiprocessing (2) to decrease runtime for large collections of playlists
+
 Enjoy!
