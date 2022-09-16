@@ -4,7 +4,8 @@ Welcome to the Spotify Utility Suite (SUS). This is a personal project that I've
 
 1. A program that can be used to visualize statistics of certain songs or playlists 
 2. A clustering algorithm that can compare personal "artist" playlists and Spotify's "This is <Artist>" playlists. More on this later 
-3. (In-progress) A recommendation system tuned on the statistics I described in (1)
+3. A script that automates the process of sorting liked songs  
+4. (In-progress) A recommendation system tuned on the statistics I described in (1)
 
 Feel free to create PR's if you'd like to see any features or want to contribute!
 
