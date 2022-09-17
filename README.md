@@ -1,17 +1,17 @@
 # Spotify Utility Suite
 
-Welcome to the Spotify Utility Suite (SUS). This is a personal project that I've create to experiment with Spotify and interact with my music in a novel way. This project started as a simple data mining exercise and developed into a web application, automation, and utility suite 
+Welcome to the Spotify Utility Suite (SUS). This is a personal project that I've created to experiment with Spotify and interact with my music in a novel way. This project started as a simple data mining exercise and developed into a web application, automation, and utility suite.
 
 ### Web Application
 The web application consists of two parts
 1. A program that can be used to visualize statistics of certain songs or playlists 
-2. A clustering algorithm that can compare personal "artist" playlists and Spotify's "This is <Artist>" playlists.
+2. A clustering algorithm that can compare personal "artist" playlists and Spotify's "This is <Artist>" playlists
 
 I've always been really interested in why and how Spotify chooses the songs in the "This is `Artist`" playlists. I have a lot of my own artist playlists and decided
 to use clustering methods to see if their selection of songs lines up with mine. The clustering page uses data from part 1 and provides an interactive visualization 
 via plotly. 
 
-Find the web app at bit.ly/susuite
+Find the web app at bit.ly/susuite.
 
 ### Automation
 It's extremely hard to keep my artist playlists updated as I listen to new music all the time. This automation adds each song to its corresponding artist
