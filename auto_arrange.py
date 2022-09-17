@@ -33,13 +33,13 @@ To use
 ######################################################################## JSON reading ####################################################################################
 import json 
 #keys
-with open("priv.json") as private:
+with open("json_settings/priv.json") as private:
     priv = json.load(private)
 #playlists
-with open("playlists.json") as data:
+with open("json_settings/playlists.json") as data:
     artist_playlists = json.load(data)
 #cutoff date 
-with open("date.json") as cutoff:
+with open("json_settings/date.json") as cutoff:
     cutoff = json.load(cutoff)
 
 ######################################################################## Program start ####################################################################################
