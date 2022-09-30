@@ -15,8 +15,7 @@ To use
     each uri
 
 2. Edit the date.json file to specify the cutoff date.
-    Songs before this date will not be sorted. TODO: make
-    this date auto update from the time the program is ran
+    Songs before this date will not be sorted.
 
 3. Create a private key file with the structure and name it
     priv.json
@@ -28,6 +27,7 @@ To use
     TODO: allow user to just log in 
 
 3. Run the program and watch songs appear in your playlists
+TODO: Return songs that are not sorted 
 """
 
 ######################################################################## JSON reading ####################################################################################
@@ -191,3 +191,10 @@ for i in range(0, len(artist_exist)):
             tracks=[artist_exist[i]["track"]["uri"]],
         )
         print("Song added")
+
+#update the date in JSON for next time
+cutoff['year'] = datetime.date.today().year
+cutoff['month'] = datetime.date.today().month
+cutoff['day'] = datetime.date.today().day
+with open("json_settings/date.json", 'w') as outfile:
+    json.dump(cutoff, outfile)
