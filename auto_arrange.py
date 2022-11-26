@@ -192,6 +192,11 @@ for i in range(0, len(artist_exist)):
         )
         print("Song added")
 
+#return songs that are not sorted 
+for i in range(0, len(artist_not_exist)):
+    print(artist_not_exist[i]['track']['name'])
+        
+
 #update the date in JSON for next time
 cutoff['year'] = datetime.date.today().year
 cutoff['month'] = datetime.date.today().month
