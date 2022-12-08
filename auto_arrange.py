@@ -27,7 +27,6 @@ To use
     TODO: allow user to just log in 
 
 3. Run the program and watch songs appear in your playlists
-TODO: Return songs that are not sorted 
 """
 
 ######################################################################## JSON reading ####################################################################################
